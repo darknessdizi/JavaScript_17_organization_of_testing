@@ -3,7 +3,6 @@ export default function indetifyCard(value, array) {
   if (value.length >= 6) {
     const number = value.slice(0, 6);
     for (let item of array) {
-      console.log(item.diapazon)
       const diapazon = parseDiapazon(number, item.diapazon);
       const lengthNumber = parseLength(value, item.lengthNumber);
       if ((diapazon) && (lengthNumber)) {
@@ -15,8 +14,7 @@ export default function indetifyCard(value, array) {
 }
 
 function parseDiapazon(number, string) {
-  // Парсит диапазон из строки и сравнивает его с началом номера карты 
-  console.log(string)
+  // Парсит диапазон начала карты и сравнивает его с началом номера карты 
   const text = string.replaceAll(' ', '');
   const array = text.split(',');
   for (let item of array) {
