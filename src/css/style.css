@@ -109,7 +109,7 @@ body {
 }
 
 #Discover.disable {
-  background-image: url('../img/foto5.jpg');
+  background-image: url('../img/discover-grey.svg');
 }
 
 #Diners-club {
@@ -117,7 +117,7 @@ body {
 }
 
 #Diners-club.disable {
-  background-image: url('../img/foto5.jpg');
+  background-image: url('../img/diners-club-grey.svg');
 }
 
 #American-express {
@@ -129,9 +129,9 @@ body {
 }
 
 #Maestro {
-  background-image: url('../img/paypal.svg');
+  background-image: url('../img/maestro.svg');
 }
 
 #Maestro.disable {
-  background-image: url('../img/foto5.jpg');
+  background-image: url('../img/maestro-grey.svg');
 }
