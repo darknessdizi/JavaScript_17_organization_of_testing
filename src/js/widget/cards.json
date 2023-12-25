@@ -1,0 +1,44 @@
+{
+  "creditCards": [
+    {
+      "title": "Discover",
+      "diapazon": "6011, 622126-622925, 644-649, 65",
+      "lengthNumber": "16-19"
+    },
+    {
+      "title": "VISA",
+      "diapazon": "4",
+      "lengthNumber": "13, 16"
+    },
+    {
+      "title": "MIR",
+      "diapazon": "2200-2204",
+      "lengthNumber": "16-19"
+    },
+    {
+      "title": "Mastercard",
+      "diapazon": "51-55,2221-2720",
+      "lengthNumber": "16"
+    },
+    {
+      "title": "JCB",
+      "diapazon": "3528-3589",
+      "lengthNumber": "16-19"
+    },
+    {
+      "title": "Diners-club",
+      "diapazon": "36,300-305,3095,38,39",
+      "lengthNumber": "16-19"
+    },
+    {
+      "title": "American-express",
+      "diapazon": "34,37",
+      "lengthNumber": "15"
+    },
+    {
+      "title": "Maestro",
+      "diapazon": "5018,5020,5038,5893,6304,6759,6766,6762,6763",
+      "lengthNumber": "12-19"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+/* ------------ Общие параметры: ------------ */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f6f8f9;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 5%;
+  background-color: darkkhaki;
+}
+
+.content {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: aquamarine;
+  min-width: 300px;
+  max-width: 400px;
+  border: 1px solid black;
+}
+
+.conteiner_money_sistem {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 5px 0px 0px 5px;
+}
+
+.card_money_sistem {
+  width: 45px;
+  height: 30px;
+  background-color: white;
+  margin: 0 5px 5px 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.card_money_sistem.disable {
+  border: none;
+}
+
+.conteiner_input_data {
+  display: flex;
+  margin: 0 15px 5px 5px;
+}
+
+.form_text {
+  flex-grow: 1;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.form_text.validate {
+  background-color: rgb(201, 250, 230);
+}
+
+.form_text.novalidate {
+  background-color: rgb(255, 197, 197);
+}
+
+.form_button {
+  margin-left: 5px;
+  background-color: chartreuse;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: max-content;
+  min-width: max-content;
+}
+
+.form_button:hover {
+  background-color: rgb(208, 255, 0);
+}
+
+#VISA {
+  background-image: url('../img/visa.svg');
+}
+
+#VISA.disable {
+  background-image: url('../img/visa-grey.svg');
+}
+
+#MIR {
+  background-image: url('../img/mir.svg');
+}
+
+#MIR.disable {
+  background-image: url('../img/mir-grey.svg');
+}
+
+#Mastercard {
+  background-image: url('../img/mastercard.svg');
+}
+
+#Mastercard.disable {
+  background-image: url('../img/mastercard-grey.svg');
+}
+
+#JCB {
+  background-image: url('../img/jcb.svg');
+}
+
+#JCB.disable {
+  background-image: url('../img/jcb-grey.svg');
+}
+
+#Discover {
+  background-image: url('../img/discover.svg');
+}
+
+#Discover.disable {
+  background-image: url('../img/foto5.jpg');
+}
+
+#Diners-club {
+  background-image: url('../img/diners-club.svg');
+}
+
+#Diners-club.disable {
+  background-image: url('../img/foto5.jpg');
+}
+
+#American-express {
+  background-image: url('../img/american-express.svg');
+}
+
+#American-express.disable {
+  background-image: url('../img/american-express-grey.svg');
+}
+
+#Maestro {
+  background-image: url('../img/paypal.svg');
+}
+
+#Maestro.disable {
+  background-image: url('../img/foto5.jpg');
+}
