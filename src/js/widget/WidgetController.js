@@ -20,43 +20,44 @@ export default class WidgetController {
     // Проверка валидности набора карты
     const number = this.widget.input.value.replaceAll(' ', '');
     if (checkValidateCard(number)) {
-      this.widget.input.classList.remove('novalidate');
-      this.widget.input.classList.add('validate');
+      this.widget.input.classList.remove('invalid');
+      this.widget.input.classList.add('valid');
     } else {
-      this.widget.input.classList.remove('validate');
-      this.widget.input.classList.add('novalidate');
+      this.widget.input.classList.remove('valid');
+      this.widget.input.classList.add('invalid');
     }
   }
 
   onClick(event) {
-    // Callback для события click (ввод текста в поле input) 
-    this.widget.input.classList.remove('novalidate');
-    this.widget.input.classList.remove('validate');
+    // Callback для события click (ввод текста в поле input)
+    this.widget.input.classList.remove('invalid');
+    this.widget.input.classList.remove('valid');
 
-    let value = this.widget.input.value;
+    let { value } = this.widget.input;
     if ((!isFinite(event.data)) || (event.data === ' ')) {
       this.widget.input.value = value.slice(0, value.length - 1);
       return;
     }
 
     value = value.replaceAll(' ', '');
-    this.widget.input.value = this.repeatInputValue(value);
+    this.widget.input.value = WidgetController.repeatInputValue(value);
 
     const titleCard = indetifyCard(value, this.cards);
     this.widget.setDeactiveCard();
     if (titleCard) {
       this.widget.setActiveCard(titleCard);
-    } 
+    }
   }
 
-  repeatInputValue(value) {
-    // Разбивает цифры на группы по 4 символа и возвращает строку 
-    const step = Math.floor(value.length/4);
+  static repeatInputValue(value) {
+    // Разбивает цифры на группы по 4 символа и возвращает строку
+    const step = Math.floor(value.length / 4);
     let result = String();
     if (step > 0) {
       let index = 0;
       for (let i = 0; i < step + 1; i += 1) {
-        result += value.slice(index, 4 + (4 * i)) + ' ';
+        result += value.slice(index, 4 + (4 * i));
+        result += ' ';
         index = 4 + (4 * i);
       }
     } else {

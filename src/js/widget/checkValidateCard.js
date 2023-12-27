@@ -8,12 +8,15 @@ export default function checkValidateCard(number) {
     let digit = (number.charAt(i));
     if (statusMulti) {
       digit *= 2;
+      statusMulti = false;
+    } else {
+      statusMulti = true;
     }
 
-    statusMulti = statusMulti ? false : true;
-    sum = Math.trunc(digit / 10) + digit % 10;
+    // statusMulti = statusMulti ? false : true;
+    sum = Math.trunc(digit / 10) + (digit % 10);
     total += sum;
   }
   const result = (10 - (total % 10)) % 10;
-  return result == checksum;
+  return result === checksum;
 }

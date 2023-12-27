@@ -1,4 +1,4 @@
-import indetifyCard from "../identifyCard";
+import indetifyCard from '../identifyCard';
 import data from '../cards.json';
 
 const arrayCards = [
@@ -10,7 +10,7 @@ const arrayCards = [
       '4121205825083034',
       '4128416358857206',
       '4024007175232106',
-    ]
+    ],
   ],
   [
     'Mastercard',
@@ -20,7 +20,7 @@ const arrayCards = [
       '5457857808330195',
       '5469351877462705',
       '5320357019198288',
-    ]
+    ],
   ],
   [
     'Discover',
@@ -31,7 +31,7 @@ const arrayCards = [
       '6011739259793880',
       '6011667567609615',
       '6221261111111111113',
-    ]
+    ],
   ],
   [
     'American-express',
@@ -41,15 +41,15 @@ const arrayCards = [
       '349886264694383',
       '347296718906163',
       '342252840505824',
-    ]
+    ],
   ],
   [
     'MIR',
     [
       '2201111111111116',
-    ]
+    ],
   ],
-]
+];
 
 const testClass = test.each(arrayCards);
 
@@ -73,11 +73,11 @@ test('Введен не существующий номер карты', () => {
 test('Ошибки в json объекте', () => {
   const errorData = [
     {
-      "title": "Discover",
-      "diapazon": "6011error, 622126-622925, 644-649, 65",
-      "lengthNumber": "16-19"
-    }
-  ]
+      title: 'Discover',
+      diapazon: '6011error, 622126-622925, 644-649, 65',
+      lengthNumber: '16-19',
+    },
+  ];
   const number = '6011542509427824';
   const result = indetifyCard(number, errorData);
   expect(result).toBe(false);

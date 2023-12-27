@@ -37,7 +37,7 @@ body {
 }
 
 .card_money_sistem.disable {
-  border: none;
+  border: 1px solid white;
 }
 
 .conteiner_input_data {
@@ -51,11 +51,11 @@ body {
   padding-right: 5px;
 }
 
-.form_text.validate {
+.form_text.valid {
   background-color: rgb(201, 250, 230);
 }
 
-.form_text.novalidate {
+.form_text.invalid {
   background-color: rgb(255, 197, 197);
 }
 
