@@ -1,6 +1,6 @@
 export default function checkValidateCard(number) {
   // Функция проверяет номер кредитной карты по алгоритму Луна
-  const checksum = number.slice(-1);
+  const checksum = Number(number.slice(-1));
   let total = 0;
   let statusMulti = true;
   for (let i = number.length - 2; i >= 0; i -= 1) {

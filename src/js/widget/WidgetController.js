@@ -34,7 +34,7 @@ export default class WidgetController {
     this.widget.input.classList.remove('valid');
 
     let { value } = this.widget.input;
-    if ((!isFinite(event.data)) || (event.data === ' ')) {
+    if ((!Number.isFinite(Number(event.data))) || (event.data === ' ')) {
       this.widget.input.value = value.slice(0, value.length - 1);
       return;
     }
