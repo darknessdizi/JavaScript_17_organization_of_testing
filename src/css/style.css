@@ -72,7 +72,7 @@ body {
   background-color: rgb(208, 255, 0);
 }
 
-#VISA {
+#VISA.active {
   background-image: url('../img/visa.svg');
 }
 
@@ -80,7 +80,7 @@ body {
   background-image: url('../img/visa-grey.svg');
 }
 
-#MIR {
+#MIR.active {
   background-image: url('../img/mir.svg');
 }
 
@@ -88,7 +88,7 @@ body {
   background-image: url('../img/mir-grey.svg');
 }
 
-#Mastercard {
+#Mastercard.active {
   background-image: url('../img/mastercard.svg');
 }
 
@@ -96,7 +96,7 @@ body {
   background-image: url('../img/mastercard-grey.svg');
 }
 
-#JCB {
+#JCB.active {
   background-image: url('../img/jcb.svg');
 }
 
@@ -104,7 +104,7 @@ body {
   background-image: url('../img/jcb-grey.svg');
 }
 
-#Discover {
+#Discover.active {
   background-image: url('../img/discover.svg');
 }
 
@@ -112,7 +112,7 @@ body {
   background-image: url('../img/discover-grey.svg');
 }
 
-#Diners-club {
+#Diners-club.active {
   background-image: url('../img/diners-club.svg');
 }
 
@@ -120,7 +120,7 @@ body {
   background-image: url('../img/diners-club-grey.svg');
 }
 
-#American-express {
+#American-express.active {
   background-image: url('../img/american-express.svg');
 }
 
@@ -128,7 +128,7 @@ body {
   background-image: url('../img/american-express-grey.svg');
 }
 
-#Maestro {
+#Maestro.active {
   background-image: url('../img/maestro.svg');
 }
 

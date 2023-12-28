@@ -14,8 +14,13 @@ describe('Page start', () => {
       headless: false, // чтобы запустить реальный браузер (true браузер не будет запущен)
       slowMo: 100, // Задержка между действиями браузера 100 мс
       devtools: true, // чтобы видеть инструменты разработчика
+      args: [
+        '--start-maximized', // you can also use '--start-fullscreen'
+      ],
     });
     page = await browser.newPage(); // Создание экземпляра страницы
+    // page = await browser.pages(); // Получение списка страниц
+    await (await browser.pages())[0].close(); // Закрыть первую страницу (по умолчанию)
   });
 
   afterEach(async () => {
@@ -37,31 +42,24 @@ describe('Page start', () => {
     const number = '2201111111111116';
     await input.type(number); // Ввод данных в поле инпут
 
-    // const icon = await page.waitForSelector('#MIR');
-    // const expected = icon.clasName;
-    // expect('disable').not.toEqual(expect.stringContaining(expected));
-
-    const iconMir = await page.waitForSelector('#MIR');
-    expect(iconMir.classList).not.toContain('disable');
-
+    await page.waitForSelector('#MIR.active');
     await button.click(); // Нажатие кнопки
     await page.waitForSelector('.form_text.valid'); // Ожидание появления класса валидности у формы
 
     await page.focus('.form_text');
-    for (const _ of number) {
-      await page.keyboard.press('Backspace');
+    for (let i = 0; i < number.length; i += 1) {
+      page.keyboard.press('Backspace');
     }
-    await page.keyboard.type('6221261111111111113');
+    await input.type('6221261111111111113');
 
-    expect(iconMir.classList).toContain('disable');
-    const iconDiscover = await page.waitForSelector('#Discover');
-    expect(iconDiscover.classList).not.toContain('disable');
+    await page.waitForSelector('#MIR.disable');
+    await page.waitForSelector('#Discover.active');
 
-    await page.keyboard.press('Enter');
+    await input.press('Enter');
     await page.waitForSelector('.conteiner_input_data .form_text.valid'); // Ожидание появления класса валидности у страницы
   });
 
-  it ('test ввода не существующего номера', async () => {
+  it('test ввода не существующего номера', async () => {
     await page.goto('http://localhost:9090');
     await page.waitForSelector('.content');
     const form = await page.$('.conteiner_input_data');

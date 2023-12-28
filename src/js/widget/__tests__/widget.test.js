@@ -77,6 +77,7 @@ testArray('Ввод валидных данных (кредитная карта
     const icon = widget.parent.querySelector(`#${title}`);
     // Иконка платежной системы активна
     expect(icon.classList).not.toContain('disable');
+    expect(icon.classList).toContain('active');
 
     const eventSubmit = new Event('submit');
     widget.form.dispatchEvent(eventSubmit);
@@ -97,11 +98,23 @@ const errorCards = [
 
 const testErrorArray = test.each(errorCards);
 
-testErrorArray('Ввод не валидных карт', (number) => {
+testErrorArray('Ввод не валидной карты %s', (number) => {
   widget.input.value = number;
 
   const eventSubmit = new Event('submit');
   widget.form.dispatchEvent(eventSubmit);
   // Данные не прошли проверку на валидность
   expect(widget.input.classList).toContain('invalid');
+});
+
+test('Ввод пользователем не корректных данных', () => {
+  const text = 'error1 tex2t 3 for hole input +*/=-';
+  widget.input.value = '';
+  for (const symbol of text) {
+    widget.input.value += symbol;
+    const eventInput = new Event('input');
+    eventInput.data = symbol;
+    widget.input.dispatchEvent(eventInput);
+  }
+  expect(widget.input.value).toBe('123');
 });

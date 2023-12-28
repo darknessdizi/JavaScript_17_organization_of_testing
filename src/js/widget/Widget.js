@@ -79,13 +79,15 @@ export default class Widget {
     const selector = `#${title}`;
     const div = this.parent.querySelector(selector);
     div.classList.remove('disable');
+    div.classList.add('active');
   }
 
   setDeactiveCard() {
     const div = this.parent.querySelector('.conteiner_money_sistem');
     for (const child of div.children) {
-      if (!child.classList.contains('disable')) {
+      if (child.classList.contains('active')) {
         child.classList.add('disable');
+        child.classList.remove('active');
       }
     }
   }
