@@ -1,6 +1,8 @@
 # Домашнее задание к лекции «Организация тестирования (Unit, E2E)»
 
-[![Build status](https://ci.appveyor.com/api/projects/status/qhdl9nqv6804pmqj?svg=true)](https://ci.appveyor.com/project/yuriyvyatkin/ahj-hw-4-testing)
+[![Build status](https://ci.appveyor.com/api/projects/status/ilaenx45ksuh4686?svg=true)](https://ci.appveyor.com/project/darknessdizi/javascript-17-organization-of-testing)
+
+**Ссылка на страницу: https://darknessdizi.github.io/JavaScript_17_organization_of_testing/**
 
 ## Credit Card Validator
 
