@@ -53,8 +53,8 @@ const arrayCards = [
 
 const testClass = test.each(arrayCards);
 
-testClass('Проверка функции identifyCard (успешная идентификация %s)', (title, obj) => {
-  for (const item of obj) {
+testClass('Проверка функции identifyCard (успешная идентификация %s)', (title, array) => {
+  for (const item of array) {
     const result = indetifyCard(item, data.creditCards);
     expect(result).toBe(title);
   }

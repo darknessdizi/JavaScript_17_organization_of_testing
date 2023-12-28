@@ -13,7 +13,7 @@ export default class Widget {
     this.parent.append(content);
 
     this.form.addEventListener('submit', (o) => this.onSubmit(o));
-    this.input.addEventListener('input', (o) => this.onClick(o));
+    this.input.addEventListener('input', (o) => this.onInput(o));
   }
 
   createWidget() {
@@ -66,7 +66,7 @@ export default class Widget {
     this.submitListeners.push(callback);
   }
 
-  onClick(event) {
+  onInput(event) {
     event.preventDefault();
     this.inputListeners.forEach((o) => o.call(null, event));
   }

@@ -12,7 +12,7 @@ export default class WidgetController {
     this.widget.bindToDOM();
     this.widget.drawIconsCards(this.cards);
     this.widget.addSubmitListeners(this.onSubmit.bind(this));
-    this.widget.addInputListeners(this.onClick.bind(this));
+    this.widget.addInputListeners(this.onInput.bind(this));
   }
 
   onSubmit() {
@@ -28,8 +28,8 @@ export default class WidgetController {
     }
   }
 
-  onClick(event) {
-    // Callback для события click (ввод текста в поле input)
+  onInput(event) {
+    // Callback для события input (ввод текста в поле input)
     this.widget.input.classList.remove('invalid');
     this.widget.input.classList.remove('valid');
 
